@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "about")
@@ -20,6 +21,8 @@ public class About {
     private String first_name;
     @Column(name = "last_name")
     private String last_name;
+    @Column(name = "date_of_birth")
+    private LocalDate date_of_birth;
     @Column(name = "email")
     private String email;
     @Column(name = "yearsOfExperience")
