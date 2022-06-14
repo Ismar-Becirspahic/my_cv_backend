@@ -16,34 +16,8 @@ public class AboutService {
         this.aboutRepository = projectRepository;
     }
 
-    public List<About> getProjects() {
+    public List<About> getAboutInfo() {
         return aboutRepository.findAll();
-    }
-
-    public About getOneProject(long id) {
-        return getEntity(id);
-    }
-
-    public void deleteProject(long id) {
-        aboutRepository.deleteById(id);
-    }
-
-    public About addProject(About project) {
-        return aboutRepository.save(project);
-    }
-
-    public About updateProject(About project, long id){
-        getEntity(id);
-        project.setId(id);
-        return aboutRepository.save(project);
-    }
-
-    private About getEntity(long id) {
-        Optional<About> projectOptional = aboutRepository.findById(id);
-        if(projectOptional.isPresent()) {
-            return projectOptional.get();
-        }
-        throw new RuntimeException("Project with that id does not exist.");
     }
 }
 
